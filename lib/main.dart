@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'interface1.dart'; // Import the second page
+import 'signin.dart'; // Import the second page
 
 void main() {
   runApp(MyApp());
@@ -73,14 +73,14 @@ class MainPage extends StatelessWidget {
                         width: 2), // Add border with width
                   ),
                   padding: EdgeInsets.symmetric(
-                      horizontal: 80, vertical: 20), // Button padding
-                  minimumSize: Size(200, 50), // Minimum width and height
+                      horizontal: 80, vertical: 10), // Button padding
+                  minimumSize: Size(200, 60), // Minimum width and height
                 ),
                 onPressed: () {
                   // Navigate to Interface1
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Interface1()),
+                    MaterialPageRoute(builder: (context) => signin()),
                   );
                 },
                 child: Row(
