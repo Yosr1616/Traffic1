@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ResetPassword.dart';
 import 'Signup.dart';
+import 'menu.dart';
 
 class signin extends StatelessWidget {
   const signin({super.key});
@@ -104,7 +105,7 @@ class signin extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signup()),
+                          MaterialPageRoute(builder: (context) => menu()),
                         );
                       },
                       child: Container(

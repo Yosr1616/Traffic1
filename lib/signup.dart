@@ -130,7 +130,7 @@ class signup extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: 30),
 
                 // Forgot Password row
                 Align(
@@ -138,7 +138,12 @@ class signup extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => signin()),
+                        );
+                      },
                       child: Text(
                         'Sign In',
                         style: TextStyle(

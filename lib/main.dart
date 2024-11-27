@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'signin.dart'; // Import the second page
+import 'signin.dart';
+// Import the second page
 
 void main() {
   runApp(MyApp());
