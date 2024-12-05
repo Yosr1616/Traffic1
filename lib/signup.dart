@@ -9,7 +9,7 @@ class signup extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/img3.png'),
               fit: BoxFit.cover,
@@ -22,16 +22,17 @@ class signup extends StatelessWidget {
               children: [
                 // Back Arrow Icon
                 IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+                  icon: const Icon(Icons.arrow_back,
+                      color: Colors.white, size: 30),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
 
                 // "Create Account" text
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Create',
                     style: TextStyle(
@@ -41,8 +42,8 @@ class signup extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Account',
                     style: TextStyle(
@@ -52,10 +53,10 @@ class signup extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 40), // Space before the form inputs
+                const SizedBox(height: 40), // Space before the form inputs
 
-                // Email TextField
-                SizedBox(height: 40),
+                // Username TextField
+                const SizedBox(height: 40),
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'Username',
@@ -67,8 +68,9 @@ class signup extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
+                // Email TextField
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'Your Email',
@@ -80,7 +82,9 @@ class signup extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
+
+                // Password TextField
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
@@ -93,13 +97,13 @@ class signup extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
-                // Sign-in button
+                // Sign-up button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Sign Up',
                       style: TextStyle(
                         fontSize: 25,
@@ -107,22 +111,23 @@ class signup extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(width: 50),
+                    const SizedBox(width: 50),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signin()),
+                          MaterialPageRoute(
+                              builder: (context) => const signin()),
                         );
                       },
                       child: Container(
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Color.fromARGB(255, 92, 103, 122),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward,
                           color: Colors.white,
                         ),
@@ -130,9 +135,9 @@ class signup extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
 
-                // Forgot Password row
+                // Sign-in link
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Padding(
@@ -141,18 +146,20 @@ class signup extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signin()),
+                          MaterialPageRoute(
+                              builder: (context) => const signin()),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'Sign In',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.black,
-                            decoration: TextDecoration.underline,
-                            decorationColor: Color.fromARGB(255, 234, 73, 4),
-                            decorationThickness: 4),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.black,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Color.fromARGB(255, 234, 73, 4),
+                          decorationThickness: 4,
+                        ),
                       ),
                     ),
                   ),

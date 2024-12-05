@@ -11,7 +11,7 @@ class signin extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/img2.png'),
               fit: BoxFit.cover,
@@ -24,16 +24,17 @@ class signin extends StatelessWidget {
               children: [
                 // Back Arrow Icon
                 IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.white, size: 30),
+                  icon: const Icon(Icons.arrow_back,
+                      color: Colors.white, size: 30),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
-                SizedBox(height: 8), // Space below the icon
+                const SizedBox(height: 8), // Space below the icon
 
                 // "Welcome" text
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Welcome',
                     style: TextStyle(
@@ -43,10 +44,10 @@ class signin extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 8), // Adjust space below the text
+                const SizedBox(height: 8), // Adjust space below the text
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     'Back',
                     style: TextStyle(
@@ -56,10 +57,11 @@ class signin extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20), // Space before the form inputs
+                const SizedBox(height: 20), // Space before the form inputs
 
                 // Email TextField
-                SizedBox(height: 40), // Add space before the first TextField
+                const SizedBox(
+                    height: 40), // Add space before the first TextField
 
                 TextField(
                   decoration: InputDecoration(
@@ -72,7 +74,7 @@ class signin extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20), // Space between TextFields
+                const SizedBox(height: 20), // Space between TextFields
 
                 // Password TextField
                 TextField(
@@ -86,13 +88,14 @@ class signin extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 40), // Space after the Password TextField
+                const SizedBox(
+                    height: 40), // Space after the Password TextField
 
                 // Sign in button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Sign in',
                       style: TextStyle(
                         fontSize: 25,
@@ -100,22 +103,22 @@ class signin extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(width: 40),
+                    const SizedBox(width: 40),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => menu()),
+                          MaterialPageRoute(builder: (context) => const menu()),
                         );
                       },
                       child: Container(
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Color.fromARGB(255, 92, 103, 122),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward,
                           color: Colors.white,
                         ),
@@ -125,7 +128,7 @@ class signin extends StatelessWidget {
                 ),
 
                 // Spacer pushes the next widgets to the bottom of the screen
-                Spacer(),
+                const Spacer(),
 
                 // Forgot Password and Sign Up links
                 Row(
@@ -135,10 +138,11 @@ class signin extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signup()),
+                          MaterialPageRoute(
+                              builder: (context) => const signup()),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'Sign Up',
                         style: TextStyle(
                           fontSize: 18,
@@ -154,10 +158,10 @@ class signin extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ResetPassword()),
+                              builder: (context) => const ResetPassword()),
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         'Forgot Password',
                         style: TextStyle(
                           fontSize: 18,
@@ -171,7 +175,7 @@ class signin extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 40), // Optional padding at the bottom
+                const SizedBox(height: 40), // Optional padding at the bottom
               ],
             ),
           ),

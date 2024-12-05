@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'signin.dart';
-// Import the second page
+import 'signin.dart'; // Import the second page
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Navigation Example',
       debugShowCheckedModeBanner: false, // Disable the debug banner
       home: MainPage(),
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +35,9 @@ class MainPage extends StatelessWidget {
           ),
           // Text "MyLights" positioned on the left and higher on the screen
           Positioned(
-            top: MediaQuery.of(context).size.height /
-                8, // Position a bit higher than before
-            left: 20, // Position it towards the left side with padding
-            child: Text(
+            top: MediaQuery.of(context).size.height / 8,
+            left: 20,
+            child: const Text(
               'MyLights',
               style: TextStyle(
                 fontSize: 40,
@@ -46,13 +48,12 @@ class MainPage extends StatelessWidget {
           ),
           // Text area positioned at the bottom third of the page
           Positioned(
-            bottom: MediaQuery.of(context).size.height /
-                3, // Position from the bottom
+            bottom: MediaQuery.of(context).size.height / 3,
             left: 0,
             right: 0,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Container(), // Placeholder for any future text content
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: SizedBox(), // Placeholder for any future text content
             ),
           ),
           // Button positioned near the bottom
@@ -67,50 +68,50 @@ class MainPage extends StatelessWidget {
                       255, 92, 103, 122), // Button background color
                   foregroundColor: Colors.white, // Button text color
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        30), // Set the radius for the button's corners
-                    side: BorderSide(
-                        color: const Color.fromARGB(255, 248, 247, 247),
-                        width: 2), // Add border with width
+                    borderRadius: BorderRadius.circular(30), // Button corners
+                    side: const BorderSide(
+                      color: Color.fromARGB(255, 248, 247, 247),
+                      width: 2, // Border width
+                    ),
                   ),
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 80, vertical: 10), // Button padding
-                  minimumSize: Size(200, 60), // Minimum width and height
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 80,
+                    vertical: 10,
+                  ), // Button padding
+                  minimumSize: const Size(200, 60), // Minimum size
                 ),
                 onPressed: () {
                   // Navigate to Interface1
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => signin()),
+                    MaterialPageRoute(builder: (context) => const signin()),
                   );
                 },
                 child: Row(
-                  mainAxisSize: MainAxisSize
-                      .min, // Ensure the Row doesn't take up more space than needed
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    const Text(
                       'NEXT',
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold), // Make text bold
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    SizedBox(width: 16), // Space between the text and the icon
+                    const SizedBox(width: 16),
                     // Rectangle around the vector icon
                     Container(
-                      padding:
-                          EdgeInsets.all(8), // Padding inside the rectangle
+                      padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 92, 103,
-                            122), // Background color of the rectangle
+                        color: const Color.fromARGB(255, 92, 103, 122),
                         border: Border.all(
-                            color: const Color.fromARGB(255, 251, 251, 251),
-                            width: 1), // Border color and width
+                          color: const Color.fromARGB(255, 251, 251, 251),
+                          width: 1,
+                        ),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward, // Icon inside the rectangle
                         size: 20,
-                        color: const Color.fromARGB(
-                            255, 249, 249, 249), // Icon color
+                        color: Color.fromARGB(255, 249, 249, 249),
                       ),
                     ),
                   ],
